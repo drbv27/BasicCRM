@@ -29,7 +29,7 @@ exports.mostrarClientes = async (req, res, next) => {
 };
 
 //Mostrar un unico cliente por ID
-exports.mostrarCliente = async (req, res, next) => {
+/* exports.mostrarCliente = async (req, res, next) => {
   const cliente = await Clientes.findById(req.params.idCliente);
   if (!cliente) {
     res.json({ mensaje: "Cliente no existe" });
@@ -37,4 +37,13 @@ exports.mostrarCliente = async (req, res, next) => {
   }
   //mostrar el cliente
   res.json(cliente);
+}; */
+exports.mostrarCliente = async (req, res, next) => {
+  try {
+    const cliente = await Clientes.findById(req.params.idCliente);
+    res.json(cliente);
+  } catch (error) {
+    console.log(error);
+    next();
+  }
 };
