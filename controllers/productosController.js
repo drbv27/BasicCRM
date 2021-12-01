@@ -78,3 +78,40 @@ exports.mostrarProducto = async (req, res, next) => {
     next();
   }
 };
+
+//Update Producto por ID
+exports.actualizarProducto = async (req, res, next) => {
+  try {
+    //construir un nuevo producto
+    let nuevoProducto = req.body;
+    //verificar si hay imagen nueva
+    if (req.file) {
+      nuevoProducto.imagen = req.file.filename;
+    } else {
+      let productoAnterior = await Productos.findById(req.params.idProducto);
+      nuevoProducto.imagen = productoAnterior.imagen;
+    }
+
+    let producto = await Productos.findOneAndUpdate(
+      { _id: req.params.idProducto },
+      nuevoProducto,
+      {
+        new: true,
+      }
+    );
+    res.json(producto);
+  } catch (error) {
+    console.log(error);
+    next();
+  }
+};
+//Eliminar un Producto por ID
+exports.eliminarProducto = async (req, res, next) => {
+  try {
+    await Productos.findOneAndDelete({ _id: req.params.idProducto });
+    res.json({ mensaje: "El producto se ha eliminado" });
+  } catch (error) {
+    console.log(error);
+    next();
+  }
+};
