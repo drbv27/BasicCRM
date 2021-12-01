@@ -32,5 +32,7 @@ module.exports = function () {
   );
   //Muestra todos los productos
   router.get("/productos", productosController.mostrarProductos);
+  //Muestra un producto
+  router.get("/productos/:idProducto", productosController.mostrarProducto);
   return router;
 };

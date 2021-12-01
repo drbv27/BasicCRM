@@ -63,3 +63,18 @@ exports.mostrarProductos = async (req, res, next) => {
     next();
   }
 };
+
+//Muestra un producto
+exports.mostrarProducto = async (req, res, next) => {
+  try {
+    const producto = await Productos.findById(req.params.idProducto);
+    /*     if (!producto) {
+      res.json({ mensaje: "Ese producto no existe" });
+      return next();
+    } */
+    res.json(producto);
+  } catch (error) {
+    console.log(error);
+    next();
+  }
+};
