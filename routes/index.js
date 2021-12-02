@@ -43,7 +43,13 @@ module.exports = function () {
   );
   //Eliminar Productos
   router.delete("/productos/:idProducto", productosController.eliminarProducto);
+
+  /*-------PEDIDOS-------*/
+  //Agrega nuevos pedidos
+  router.post("/pedidos", pedidosController.nuevoPedido);
+  //Mostrar pedidos
+  router.get("/pedidos", pedidosController.mostrarPedidos);
+  //Mostrar un pedido por ID
+  router.get("/pedidos/:idPedido", pedidosController.mostrarPedido);
   return router;
 };
-/*-------PEDIDOS-------*/
-router.post("/pedidos", pedidosController.nuevoPedido);
