@@ -51,5 +51,9 @@ module.exports = function () {
   router.get("/pedidos", pedidosController.mostrarPedidos);
   //Mostrar un pedido por ID
   router.get("/pedidos/:idPedido", pedidosController.mostrarPedido);
+  //Actualizar pedidos
+  router.put("/pedidos/:idPedido", pedidosController.actualizarPedido);
+  /*-----------------*/
+  //Retornar el router
   return router;
 };
