@@ -53,6 +53,8 @@ module.exports = function () {
   router.get("/pedidos/:idPedido", pedidosController.mostrarPedido);
   //Actualizar pedidos
   router.put("/pedidos/:idPedido", pedidosController.actualizarPedido);
+  //Eliminar un pedido por su Id
+  router.delete("/pedidos/:idPedido", pedidosController.eliminarPedido);
   /*-----------------*/
   //Retornar el router
   return router;
