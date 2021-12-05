@@ -12,7 +12,8 @@ exports.nuevoCliente = async (req, res, next) => {
     });
   } catch (error) {
     //si hay error, console.log y next
-    console.log(error);
+    /* console.log(error); */
+    res.send(error);
     next();
   }
 };
