@@ -62,7 +62,8 @@ exports.actualizarCliente = async (req, res, next) => {
     );
     res.json(cliente);
   } catch (error) {
-    console.log(error);
+    res.send(error);
+    /* console.log(error); */
     next();
   }
 };
