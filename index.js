@@ -24,6 +24,9 @@ app.use(cors());
 //Rutas de la app
 app.use("/", routes());
 
+//carpeta publica
+app.use(express.static("uploads"));
+
 //puerto
 app.listen(port, () => {
   console.log(`Servidor corriendo en puerto:${port}`);
