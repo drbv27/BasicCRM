@@ -5,12 +5,12 @@ const productosController = require("../controllers/productosController");
 const pedidosController = require("../controllers/pedidosController");
 /*-------CLIENTES-------*/
 module.exports = function () {
-  /*  router.get("/", (req, res) => {
+  router.get("/", (req, res) => {
     res.send("inicio");
   });
   router.get("/nosotros", (req, res) => {
     res.send("nosotros");
-  }); */
+  });
 
   //Agrega nuevos clientes via POST
   router.post("/clientes", clienteController.nuevoCliente);
@@ -43,6 +43,8 @@ module.exports = function () {
   );
   //Eliminar Productos
   router.delete("/productos/:idProducto", productosController.eliminarProducto);
+  //Busqueda de Productos
+  router.post("/productos/busqueda/:query", productosController.buscarProducto);
 
   /*-------PEDIDOS-------*/
   //Agrega nuevos pedidos
