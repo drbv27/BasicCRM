@@ -4,6 +4,9 @@ const clienteController = require("../controllers/clienteController");
 const productosController = require("../controllers/productosController");
 const pedidosController = require("../controllers/pedidosController");
 const usuariosController = require("../controllers/usuariosController");
+/*-----MIDLEWARE PARA PROTEGER RUTAS */
+const auth = require("../middlewares/auth");
+
 /*-------CLIENTES-------*/
 module.exports = function () {
   router.get("/", (req, res) => {
@@ -17,7 +20,7 @@ module.exports = function () {
   router.post("/clientes", clienteController.nuevoCliente);
 
   //Obtener todos los clientes
-  router.get("/clientes", clienteController.mostrarClientes);
+  router.get("/clientes", auth, clienteController.mostrarClientes);
   //Muestra un cliente en especifico(ID)
   router.get("/clientes/:idCliente", clienteController.mostrarCliente);
   //Actualizar un cliente
