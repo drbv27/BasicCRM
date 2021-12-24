@@ -2,6 +2,7 @@ const express = require("express");
 const routes = require("./routes");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+require("dotenv").config({ path: "variables.env" });
 
 //CORS permite que un cliente se conecte a otro servidor para intercambiar recursos
 const cors = require("cors");
@@ -19,7 +20,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //Definir un dominio(s) para recibir las peticiones
-const whitelist = ["http://localhost:3000"];
+const whitelist = [process.env.FRONTEND_URL];
+/* const whitelist = ["http://localhost:3000"]; */
 const corsOptions = {
   origin: (origin, callback) => {
     console.log(origin);
