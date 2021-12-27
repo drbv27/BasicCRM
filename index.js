@@ -2,18 +2,18 @@ const express = require("express");
 const routes = require("./routes");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-require("dotenv").config({ path: "variables.env" });
+require("dotenv").config({ path: "variablesE.env" });
 
 //CORS permite que un cliente se conecte a otro servidor para intercambiar recursos
 const cors = require("cors");
 
 //conectar mongo
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost/restapis", { useNewUrlParser: true });
+mongoose.connect(process.env.DB, { useNewUrlParser: true });
 
 //creando el servidor
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 //habilitar body-parser
 app.use(bodyParser.json());
@@ -44,7 +44,9 @@ app.use("/", routes());
 //carpeta publica
 app.use(express.static("uploads"));
 
+const host = process.env.HOST || "0.0.0.0";
+
 //puerto
-app.listen(port, () => {
+app.listen(port, host, () => {
   console.log(`Servidor corriendo en puerto:${port}`);
 });

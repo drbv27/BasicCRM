@@ -1,0 +1,17 @@
+[{
+  "_id": {
+    "$oid": "61bf2fb8fad95d4a25fdad1b"
+  },
+  "email": "drbv27@gmail.com",
+  "nombre": "DiegoB",
+  "password": "$2b$12$XHrzxdqPVtIFg0FvEGww4O.sA0uJgpz3nqPBprUo.qMM5NHyXmJGy",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61c1418cac5ad21a1c4b8c54"
+  },
+  "email": "aideyamilea@gmail.com",
+  "nombre": "YamileA",
+  "password": "$2b$12$45tCQwKlSSF/hne95wSRsOf6C/XX8H5ubxkRveAZx/eTc8L/obzWm",
+  "__v": 0
+}]

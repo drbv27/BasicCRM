@@ -1,0 +1,61 @@
+[{
+  "_id": {
+    "$oid": "61a4b92958162efb27df17f4"
+  },
+  "nombre": "Diego Ricardo",
+  "apellido": "Bonilla",
+  "empresa": "Home",
+  "email": "drbv27@gmail.com",
+  "telefono": "555443322",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61a4b99358162efb27df17f6"
+  },
+  "nombre": "Isabel",
+  "apellido": "Bonilla",
+  "empresa": "Home",
+  "email": "correito@correo.com",
+  "telefono": "11223344",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61a4b9b558162efb27df17f8"
+  },
+  "nombre": "Aide Yamile",
+  "apellido": "Agudelo",
+  "empresa": "Home",
+  "email": "micorreito@correo.com",
+  "telefono": "11071983",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61a4b9d458162efb27df17fc"
+  },
+  "nombre": "Orion",
+  "apellido": "Bonilla",
+  "empresa": "Home",
+  "email": "micorreito2@correo.com",
+  "telefono": "2015",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ad4b9d623879a9b1a519ca"
+  },
+  "nombre": "Tristan",
+  "apellido": "Bonilla",
+  "empresa": "casita",
+  "email": "email@email.com.co",
+  "telefono": "555223311",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bcb332d87c7411ec0d271a"
+  },
+  "nombre": "Jhon",
+  "apellido": "Doe",
+  "empresa": "TV",
+  "email": "jdoe@gmail.com",
+  "telefono": "5555555",
+  "__v": 0
+}]
